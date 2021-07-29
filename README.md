@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `https://totara-thib.github.io/top-collegues/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `https://github.com/Poyatos-Remi/top-collegues/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -12,7 +12,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-[![Build Status](https://travis-ci.com/Totara-thib/top-collegues.svg?branch=master)](https://travis-ci.com/Totara-thib/top-collegues) 
+[![Build Status](https://www.travis-ci.com/Poyatos-Remi/top-collegues.svg?branch=main)](https://www.travis-ci.com/Poyatos-Remi/top-collegues) 
 
 ## Running unit tests
 
