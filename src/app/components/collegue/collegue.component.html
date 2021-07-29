@@ -1,0 +1,27 @@
+<ng-container *ngIf="collegue; else elseBlock">
+<div class="card" style="width: 18rem;">
+  <img [src]="collegue.photo" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{collegue.pseudo | uppercase}}</h5>
+    <p class="card-text">{{collegue.score | score}}</p>
+    <app-avis
+    (avis)="changeScore($event)"
+    [desactiveJaime]="desactiverJaime"
+    [desactiveDeteste]="desactiverDeteste">
+    ></app-avis>
+    <div *ngIf="err" class="alert alert-danger" role="alert">
+      Oops le service a généré une erreur. Veuillez contacter le support.
+    </div>
+  </div>
+</div>
+</ng-container>
+<ng-template #elseBlock>
+  <div>
+    Oops - Collègue obligatoire
+  </div>
+</ng-template>
+<ng-container >
+
+</ng-container>
+
+

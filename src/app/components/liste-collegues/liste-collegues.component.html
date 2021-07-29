@@ -1,0 +1,8 @@
+<div *ngIf="collegues$ | async as collegues; else msgAttente" class="d-flex flex-wrap">
+  <div *ngFor="let collegue of collegues">
+    <app-collegue [collegue]="collegue"></app-collegue>
+  </div>
+</div>
+<ng-template #msgAttente>
+  Chargement des données...
+</ng-template>

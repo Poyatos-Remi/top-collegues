@@ -1,0 +1,23 @@
+<h2>Historique des votes</h2>
+<div *ngIf="votes; else msgAttente" class="d-flex flex-wrap">
+  <div *ngFor="let vote of votes let i= index;" id={{i}}>
+    <ng-container *ngIf="vote; else msgAttente">
+      <div class="card" style="width: 18rem;">
+        <img [src]="vote.collegue.photo" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{vote.collegue.pseudo | uppercase}}</h5>
+          <ng-container *ngIf="vote.avis === Avis.AIMER; else negatif">
+            <p class="card-text">{{vote.collegue.prenom}} est apprécier, cette personne a désormais un score de {{vote.collegue.score}}</p>
+          </ng-container>
+          <ng-template #negatif>
+            <p class="card-text">{{vote.collegue.prenom}} est détesté, cette personne a désormais un score de {{vote.score}}</p>
+          </ng-template>
+          <button class="btn btn-danger" (click)="removeElement(i)">Supprimer</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<ng-template #msgAttente>
+  Chargement des données...
+</ng-template>
