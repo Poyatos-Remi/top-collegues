@@ -15,9 +15,14 @@ export class HistoriqueVotesComponent implements OnInit {
     this.refresh()
   }
 
+  // refresh() {
+  //   this.dataSrv.listerVotes()
+  //     .then(votes => this.votes = votes);
+  // }
+
   refresh() {
     this.dataSrv.listerVotes()
-      .then(votes => this.votes = votes);
+      .subscribe(votes => this.votes = votes);
   }
 
   removeElement(indexVoteASupprimer: number) {

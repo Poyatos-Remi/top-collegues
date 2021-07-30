@@ -14,14 +14,25 @@ export class CollegueComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // changeScore(avis: Avis) {
+  //   if (this.collegue) {
+  //     this.err = false;
+  //     this.dataSrv.donnerUnAvis(this.collegue, avis)
+  //       .then(col => this.collegue = col)
+  //       .catch(()=> this.err = true);
+  //   }
+  // }
+
   changeScore(avis: Avis) {
     if (this.collegue) {
-      this.err = false;
-      this.dataSrv.donnerUnAvis(this.collegue, avis)
-        .then(col => this.collegue = col)
-        .catch(()=> this.err = true);
+        this.err = false;
+        this.dataSrv.donnerUnAvis(this.collegue, avis)
+            // abonné 1
+            .subscribe(
+                col => this.collegue = col,
+                () => this.err = true);
     }
-  }
+}
 
   get desactiverJaime(): boolean {
     return this.collegue != undefined && this.collegue.score >= 1000;

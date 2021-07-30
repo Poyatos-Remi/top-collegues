@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Collegue } from '../../model'
 
@@ -7,11 +8,11 @@ import { Collegue } from '../../model'
   templateUrl: './liste-collegues.component.html'
 })
 export class ListeColleguesComponent implements OnInit {
-  collegues$!: Promise<Collegue[]>;
-  
+  collegues$!: Observable<Collegue[]>;
+
   constructor(private dataSrv: DataService) {
   }
-  
+
   refresh() {
     this.collegues$ = this.dataSrv.listerCollegues()
   }

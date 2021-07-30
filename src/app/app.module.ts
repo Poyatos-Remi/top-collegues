@@ -9,6 +9,7 @@ import { ListeColleguesComponent } from './components/liste-collegues/liste-coll
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './components/historique-votes/historique-votes.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HistoriqueVotesComponent } from './components/historique-votes/historiq
     BrowserModule,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
