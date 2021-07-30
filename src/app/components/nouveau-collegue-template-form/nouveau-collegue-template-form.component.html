@@ -1,0 +1,28 @@
+<h2>Ajouter un collegue</h2>
+<form #formCollegue="ngForm">
+  <label for="pseudo">Pseudo</label>
+  <input name="Pseudo" id="pseudo" [(ngModel)]="collegue.pseudo" required #pseudo= "ngModel" >
+  <p *ngIf="pseudo.dirty && pseudo.invalid">
+    Le champ est obligatoire.
+  </p>
+  <br>
+  <label for="nom">Nom</label>
+  <input name="Nom" id="nom" [(ngModel)]="collegue.nom" required minlength="2" #nom= "ngModel">
+  <p *ngIf="nom.dirty && nom.invalid">
+    Le champ est obligatoire.
+  </p>
+  <br>
+  <label for="prenom">Prenom</label>
+  <input name="Prenom" id="prenom" [(ngModel)]="collegue.prenom" required minlength="2" #prenom= "ngModel">
+  <p *ngIf="prenom.dirty && prenom.invalid">
+    Le champ est obligatoire.
+  </p>
+  <br>
+  <label for="photo">URL photo</label>
+  <input name="Photo URL" id="photo" [(ngModel)]="collegue.photo_url" required #photo= "ngModel">
+  <p *ngIf="photo.dirty && photo.invalid">
+    Le champ est obligatoire.
+  </p>
+  <br>
+  <button type="submit" [disabled]="formCollegue.invalid">Créer</button>
+</form>

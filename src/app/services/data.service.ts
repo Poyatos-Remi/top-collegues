@@ -62,6 +62,7 @@ export class DataService {
         ));
   }
 
+
   // listerVotes(): Promise<Vote[]> {
   //   return fetch(environment.urlResourceVote)
   //     .then(response => response.json())
